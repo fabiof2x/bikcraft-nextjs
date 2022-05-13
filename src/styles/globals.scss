@@ -1,6 +1,8 @@
+@import "variables-and-mixins";
+
 body {
   margin: 0px;
-  color: #111111;
+  color: $color-12;
 }
 
 h1,
