@@ -1,7 +1,9 @@
+import Header from "../components/patterns/Header"
+
 function HomePage() {
   return (
     <>
-      <div>Welcome to Next.js!</div>
+      <Header />
     </>
   )
 }

@@ -1,0 +1,73 @@
+@import "../../../styles/variables-and-mixins";
+
+.headerBg {
+  background-color: $color-12;
+}
+
+.headerContainer {
+  @include container;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.headerMenu {
+  color: $color-0;
+  @include font-1-m;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.headerMenu a {
+  display: inline-block;
+  padding: 16px 0px;
+  position: relative;
+}
+
+.headerMenu a:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px;
+  background: $color-0;
+  margin-top: 4px;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.headerMenu a:hover::after,
+.headerMenu a.ativo::after {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .headerMenu {
+    gap: 20px;
+  }
+  .headerMenu a {
+    background: $color-11;
+    padding: 12px 16px;
+    border-radius: 4px;
+  }
+  .headerMenu a:hover {
+    background-color: $color-10;
+  }
+  .header a:after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerMenu {
+    gap: 12px;
+  }
+  .headerMenu a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
