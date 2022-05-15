@@ -1,0 +1,69 @@
+@import "../variables-and-mixins";
+
+.introBg {
+  background: $color-12 url("../../../public/img/dec/bottom-left.svg") no-repeat bottom 160px left 20px;
+  box-shadow: inset 0 -120px $color-0;
+}
+
+.introContainer {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 40px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  h1 {
+    margin-bottom: 32px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.introContent {
+  align-self: end;
+  padding-bottom: 200px;
+
+  h1 {
+    @include font-1-xxl;
+    color: $color-0;
+
+    span {
+      color: $color-p1;
+    }
+  }
+
+  p {
+    @include font-2-l;
+    color: $color-5;
+  }
+}
+
+@media (max-width: 800px) {
+  .introBg {
+    background: $color-11;
+    padding-top: 40px;
+    box-shadow: inset 0 -60px $color-0;
+  }
+  .introContainer {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .introContent {
+    padding-bottom: 0px;
+  }
+  .introContainer h1 {
+    margin-bottom: 16px;
+  }
+  .introContainer img {
+    height: 300px;
+    width: 100%;
+  }
+}
