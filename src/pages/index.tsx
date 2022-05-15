@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.scss";
 
 import Footer from "../components/patterns/Footer"
 import Header from "../components/patterns/Header"
+import Button from "../components/Button";
 
 function HomePage() {
   return (
@@ -19,7 +20,7 @@ function HomePage() {
           <div className={styles.introContent}>
             <h1>Bicicletas feitas sob medida<span>.</span></h1>
             <p>Bicicletas elétricas de alta precisão e qualidade, feitas sob medida para você. Explore o mundo na sua velocidade com a Bikcraft.</p>
-            <a href="/bicicletas">Escolha a sua</a>
+            <Button href="/bicicletas">Escolha a sua</Button>
           </div>
           <picture>
             <source media="(max-width: 800px)" srcSet="./img/bicicletas/nimbus.jpg" />
