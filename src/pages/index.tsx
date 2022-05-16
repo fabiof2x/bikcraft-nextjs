@@ -81,7 +81,7 @@ function HomePage() {
             <span>Tecnologia Avançada</span>
             <h2>você escolhe as suas cores e componentes<span>.</span></h2>
             <p>Cada Bikcraft é única e possui a sua identidade. As medidas serão exatas para o seu corpo e altura, garantindo maior conforto e ergonomia na sua pedalada. Você pode também personalizar completamente as suas cores.</p>
-            <a href="./bicicletas.html">Escolha um modelo</a>
+            <Link href="/bicicletas">Escolha um modelo</Link>
             <div className={styles.technologyAdvantages}>
               <div>
                 <img src="./img/icones/eletrica.svg" width="24" height="24" alt="" />
@@ -100,6 +100,21 @@ function HomePage() {
           </div>
         </div>
       </article>
+
+      <section className={styles.partners} aria-label="Nossos Parceiros">
+        <h2>nossos parceiros<span>.</span></h2>
+
+        <ul>
+          <li><img src="./img/parceiros/caravan.svg" alt="Caravan" width="140" height="38" /></li>
+          <li><img src="./img/parceiros/ranek.svg" alt="Ranek" width="149" height="36" /></li>
+          <li><img src="./img/parceiros/handel.svg" alt="Handel" width="140" height="50" /></li>
+          <li><img src="./img/parceiros/dogs.svg" alt="Dogs" width="152" height="39" /></li>
+          <li><img src="./img/parceiros/lescone.svg" alt="LeScone" width="208" height="41" /></li>
+          <li><img src="./img/parceiros/flexblog.svg" alt="FlexBlog" width="165" height="38" /></li>
+          <li><img src="./img/parceiros/wildbeast.svg" alt="Wildbeast" width="196" height="34" /></li>
+          <li><img src="./img/parceiros/surfbot.svg" alt="Surfbot" width="200" height="49" /></li>
+        </ul>
+      </section>
 
       <Footer />
     </>
