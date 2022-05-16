@@ -5,7 +5,7 @@ interface Props {
   description?: string;
 }
 
-export function PageTitle({
+export function DocumentTitle({
   title,
   description
 }: Props) {

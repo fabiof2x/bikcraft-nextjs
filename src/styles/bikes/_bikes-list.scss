@@ -1,0 +1,74 @@
+@import "../variables-and-mixins";
+
+.bikesList {
+  padding-top: 60px;
+  padding-bottom: 120px;
+
+  h2 {
+    @include container;
+    @include titleLight;
+    margin-bottom: 40px;
+  }
+
+  ul {
+    display: flex;
+    gap: 40px;
+    padding: 0 20px 20px 20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+  }
+
+  li {
+    flex: 1;
+    min-width: 280px;
+
+    span {
+      @include font-2-m;
+      color: $color-8;
+      padding-left: 20px;
+    }
+  }
+
+  a {
+    display: block;
+
+    &:hover h3::before {
+      width: 24px;
+    }
+
+    @media (max-width: 800px) {
+      padding-bottom: 60px;
+
+      ul {
+        gap: 20px;
+      }
+    }
+  }
+
+  img {
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    @include font-1-xl;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 8px;
+      width: 12px;
+      margin-right: 8px;
+      background-color: $color-p1;
+      transition: width 0.2s;
+    }
+  }
+}
+
+// #bicicleta .bikesList ul {
+//   padding: 0 0 20px 0;
+// }

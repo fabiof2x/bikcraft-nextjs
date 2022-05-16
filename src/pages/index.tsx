@@ -1,15 +1,45 @@
-import { PageTitle } from "../components/PageTitle"
+import { DocumentTitle } from "../components/DocumentTitle"
 
 import styles from "../styles/Home.module.scss";
 
 import Footer from "../components/patterns/Footer"
 import Header from "../components/patterns/Header"
 import Button from "../components/Button";
+import { BikeDTO } from "../dtos/BikeDto";
+import { Link } from "../components/Link";
 
 function HomePage() {
+  //Temp Bikes Data
+  const bikes: BikeDTO[] = [
+    {
+      id: "1",
+      nome: "Magic Might",
+      preco: "2499",
+      slug: "magic-might",
+      fotoHome: "magic-home.jpg",
+      alt: "Bicicleta preta",
+    },
+    {
+      id: "2",
+      nome: "Nimbus Stark",
+      preco: "4999",
+      slug: "nimbus-stark",
+      fotoHome: "nimbus-home.jpg",
+      alt: "Bicicleta preta",
+    },
+    {
+      id: "3",
+      nome: "Nebula Cosmic",
+      preco: "3999",
+      slug: "nebula-cosmic",
+      fotoHome: "nebula-home.jpg",
+      alt: "Bicicleta preta",
+    },
+  ];
+
   return (
     <>
-      <PageTitle
+      <DocumentTitle
         title="Bikcraft - Bicicletas Elétricas"
         description="Bicicletas elétricas de alta precisão e qualidade, feitas sob medida para você. Explore o mundo na sua velocidade com a Bikcraft."
       />
@@ -28,6 +58,22 @@ function HomePage() {
           </picture>
         </div>
       </main >
+
+      <article className={styles.bikesList}>
+        <h2>escolha a sua<span>.</span></h2>
+
+        <ul>
+          {bikes.map(bike => (
+            <li key={bike.id}>
+              <Link href={`/bicicletas/${bike.slug}`}>
+                <img src={`/img/bicicletas/${bike.fotoHome}`} alt={bike.alt} width="920" height="1040" />
+                <h3>{bike.nome}</h3>
+                <span>R$ {bike.preco}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </article>
 
       <Footer />
     </>

@@ -52,12 +52,7 @@
   padding-bottom: 200px;
 
   h1 {
-    @include font-1-xxl;
-    color: $color-0;
-
-    span {
-      color: $color-p1;
-    }
+    @include titleDark;
   }
 
   p {
