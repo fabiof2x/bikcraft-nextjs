@@ -1,23 +1,9 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const originalRenderPage = ctx.renderPage
-
-    ctx.renderPage = () =>
-      originalRenderPage({
-        enhanceApp: (App) => App,
-        enhanceComponent: (Component) => Component,
-      })
-
-    const initialProps = await Document.getInitialProps(ctx)
-
-    return initialProps
-  }
-
+export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang='pt-br'>
         <Head>
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
@@ -33,5 +19,3 @@ class MyDocument extends Document {
     )
   }
 }
-
-export default MyDocument
