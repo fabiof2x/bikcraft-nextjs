@@ -13,6 +13,12 @@
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
+
+  @media (max-width: 800px) {
+    a:after {
+      display: none;
+    }
+  }
 }
 
 .headerMenu {
@@ -43,31 +49,18 @@
       width: 100%;
     }
   }
-}
 
-@media (max-width: 800px) {
-  .headerMenu {
+  @media (max-width: 800px) {
     gap: 20px;
-  }
-  .headerMenu a {
-    background: $color-11;
-    padding: 12px 16px;
-    border-radius: 4px;
-  }
-  .headerMenu a:hover {
-    background-color: $color-10;
-  }
-  .header a:after {
-    display: none;
-  }
-}
 
-@media (max-width: 600px) {
-  .headerMenu {
-    gap: 12px;
-  }
-  .headerMenu a {
-    padding: 8px 12px;
-    font-size: 14px;
+    a {
+      background: $color-11;
+      padding: 12px 16px;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: $color-10;
+      }
+    }
   }
 }

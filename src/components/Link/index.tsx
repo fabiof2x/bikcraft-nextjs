@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 interface Props extends LinkProps {
   children: ReactNode,
   href: string,
-  className: string,
+  className?: string,
 }
 
 export function Link({

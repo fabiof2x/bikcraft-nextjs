@@ -3,6 +3,12 @@
 .introBg {
   background: $color-12 url("../../../public/img/dec/bottom-left.svg") no-repeat bottom 160px left 20px;
   box-shadow: inset 0 -120px $color-0;
+
+  @media (max-width: 800px) {
+    background: $color-11;
+    padding-top: 40px;
+    box-shadow: inset 0 -60px $color-0;
+  }
 }
 
 .introContainer {
@@ -25,6 +31,20 @@
   p {
     margin-bottom: 20px;
   }
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    h1 {
+      margin-bottom: 16px;
+    }
+
+    img {
+      height: 300px;
+      width: 100%;
+    }
+  }
 }
 
 .introContent {
@@ -44,26 +64,8 @@
     @include font-2-l;
     color: $color-5;
   }
-}
 
-@media (max-width: 800px) {
-  .introBg {
-    background: $color-11;
-    padding-top: 40px;
-    box-shadow: inset 0 -60px $color-0;
-  }
-  .introContainer {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .introContent {
+  @media (max-width: 800px) {
     padding-bottom: 0px;
-  }
-  .introContainer h1 {
-    margin-bottom: 16px;
-  }
-  .introContainer img {
-    height: 300px;
-    width: 100%;
   }
 }

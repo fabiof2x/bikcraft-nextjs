@@ -23,9 +23,22 @@
   a:hover {
     color: $color-0;
   }
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+
+    & > img {
+      display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
 }
 
-.footerContato {
+.footerContact {
   h3 {
     @include font-2-l-b;
     color: $color-0;
@@ -47,7 +60,7 @@
   }
 }
 
-.footerInformacoes {
+.footerInfo {
   h3 {
     @include font-2-l-b;
     color: $color-0;
@@ -59,7 +72,7 @@
   }
 }
 
-.footerRedes {
+.footerSocialNetworks {
   display: flex;
   gap: 32px;
 }
@@ -69,23 +82,8 @@
   color: $color-6;
   grid-column: 1/-1;
   margin-top: 40px;
-}
 
-@media (max-width: 800px) {
-  .footerContainer > img {
-    display: none;
-  }
-  .footerContainer {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .footerContainer {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .footerCopy {
+  @media (max-width: 600px) {
     margin-top: 0px;
   }
 }

@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className={styles.footerBg}>
       <div className={styles.footerContainer}>
         <img src="./img/bikcraft.svg" width="136" height="32" alt="Bikcraft" />
-        <div className={styles.footerContato}>
+        <div className={styles.footerContact}>
           <h3>Contato</h3>
           <ul>
             <li><a href="tel:+556199999999">+55 61 9999-9999</a></li>
@@ -14,7 +14,7 @@ export default function Footer() {
             <li>Aquela Rua, 42 - Guará II</li>
             <li>Brasília - DF</li>
           </ul>
-          <div className={styles.footerRedes}>
+          <div className={styles.footerSocialNetworks}>
             <a href="https://www.instagram.com/fabiof2x/" target="_blank">
               <img src="./img/redes/instagram.svg" width="32" height="32" alt="Instagram" />
             </a>
@@ -26,7 +26,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className={styles.footerInformacoes}>
+        <div className={styles.footerInfo}>
           <h3>Informações</h3>
           <nav>
             <ul>
