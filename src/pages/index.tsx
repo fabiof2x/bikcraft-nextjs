@@ -116,6 +116,18 @@ function HomePage() {
         </ul>
       </section>
 
+      <section className={styles.testimonial} aria-label="Depoimento">
+        <div>
+          <img src="./img/fotos/depoimento.jpg" width="1560" height="1360" alt="Pessoa pedalando uma bicicleta Bikcraft" />
+        </div>
+        <div className={styles.testimonialContent}>
+          <blockquote>
+            <p>Pedalar sempre foi a minha paixão, o que o pessoal da Bikcraft fez foi intensificar o meu amor por esta atividade. Recomendo à todos que amo.</p>
+          </blockquote>
+          <span>Ana Júlia</span>
+        </div>
+      </section>
+
       <Footer />
     </>
   )
