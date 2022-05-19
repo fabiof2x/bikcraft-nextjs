@@ -140,7 +140,7 @@ function HomePage() {
               <li>Suporte 08h às 18h</li>
               <li>Cobertura estadual</li>
             </ul>
-            <Button href="/orcamento">Inscreva-se</Button>
+            <Button secondary href="/orcamento">Inscreva-se</Button>
           </div>
 
           <div className={styles.insuranceItem}>

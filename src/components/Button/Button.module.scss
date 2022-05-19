@@ -22,3 +22,12 @@
 .buttonContainer:hover {
   background: linear-gradient(#ffb60d, #e59317);
 }
+
+.buttonSecondary {
+  background: $color-10;
+  color: $color-2;
+
+  &:hover {
+    background: $color-9;
+  }
+}
