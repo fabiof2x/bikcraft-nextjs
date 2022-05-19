@@ -1,0 +1,22 @@
+import { DocumentTitle } from "../components/DocumentTitle"
+
+import Footer from "../components/patterns/Footer"
+import Header from "../components/patterns/Header"
+
+import styles from "../styles/{{pascalCase name}}.module.scss";
+
+export default function {{pascalCase name}}() {
+  return (
+    <>
+      <DocumentTitle
+        title=""
+        description=""
+      />
+      <Header />
+
+      <div className={styles.Container}>Page Content</div>
+
+      <Footer />
+    </>
+  )
+}

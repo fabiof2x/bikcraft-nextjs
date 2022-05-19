@@ -45,4 +45,34 @@ module.exports = function (plop) {
       }
     ]
   });
+
+  plop.setGenerator('page', {
+    description: 'new page',
+
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: "What's the new page name? (in english)"
+      },
+      {
+        type: 'input',
+        name: 'fileName',
+        message: "What's the new page file name? (in portuguese)"
+      }
+    ],
+
+    actions: [
+      {
+        type: 'add',
+        path: '../src/pages/{{lowerCase fileName}}.tsx',
+        templateFile: 'templates/page/page.tsx.hbs',
+      },
+      {
+        type: 'add',
+        path: '../src/styles/{{pascalCase name}}.module.scss',
+        templateFile: 'templates/page/Page.module.scss.hbs',
+      }
+    ]
+  });
 };
