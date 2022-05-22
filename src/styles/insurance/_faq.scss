@@ -1,0 +1,76 @@
+@import "../variables-and-mixins";
+
+.faqContainer {
+  @include container;
+
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  h2 {
+    @include titleLight;
+    margin-bottom: 60px;
+  }
+
+  button {
+    @include font-1-m-b;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 8px;
+      background-color: $color-p1;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 6px;
+      background: url("../../../public/img/icones/seta-abrir.svg");
+      transition: 0.3s;
+    }
+
+    &:hover::after,
+    &[aria-expanded="true"]::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  dl > div {
+    padding: 20px;
+    border-radius: 4px;
+  }
+
+  dl > div:nth-child(odd) {
+    background-color: $color-1;
+  }
+
+  dd {
+    @include font-2-s;
+    color: $color-9;
+
+    padding-left: 20px;
+    padding-top: 16px;
+    max-width: 80ch;
+  }
+
+  @media (max-width: 800px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    h2 {
+      margin-bottom: 40px;
+    }
+  }
+}
