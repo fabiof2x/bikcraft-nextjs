@@ -1,3 +1,7 @@
+import { GetStaticProps } from 'next'
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "../services/firebase";
+
 import { DocumentTitle } from "../components/DocumentTitle"
 
 import styles from "../styles/Home.module.scss";
@@ -9,35 +13,13 @@ import { BikeDTO } from "../dtos/BikeDto";
 import { Link } from "../components/Link";
 import InsurancePlans from "../components/patterns/InsurancePlans";
 
-function HomePage() {
-  //Temp Bikes Data
-  const bikes: BikeDTO[] = [
-    {
-      id: "1",
-      nome: "Magic Might",
-      preco: "2499",
-      slug: "magic-might",
-      fotoHome: "magic-home.jpg",
-      alt: "Bicicleta preta",
-    },
-    {
-      id: "2",
-      nome: "Nimbus Stark",
-      preco: "4999",
-      slug: "nimbus-stark",
-      fotoHome: "nimbus-home.jpg",
-      alt: "Bicicleta preta",
-    },
-    {
-      id: "3",
-      nome: "Nebula Cosmic",
-      preco: "3999",
-      slug: "nebula-cosmic",
-      fotoHome: "nebula-home.jpg",
-      alt: "Bicicleta preta",
-    },
-  ];
+interface PageProps {
+  bikes: BikeDTO[];
+}
 
+export default function HomePage({
+  bikes
+}: PageProps) {
   return (
     <>
       <DocumentTitle
@@ -138,4 +120,20 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export const getStaticProps: GetStaticProps = async () => {
+
+  let data: any = [];
+
+  const q = query(collection(db, "bicicletas"), orderBy("preco", "desc"));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    data.push({ id: doc.id, ...doc.data() });
+  });
+
+  return {
+    props: {
+      bikes: data
+    },
+    revalidate: 60 * 60 * 24, // 24 hours
+  }
+}
