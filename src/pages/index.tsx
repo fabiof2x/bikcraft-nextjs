@@ -9,12 +9,12 @@ import styles from "../styles/Home.module.scss";
 import Footer from "../components/patterns/Footer"
 import Header from "../components/patterns/Header"
 import Button from "../components/Button";
-import { BikeDTO } from "../dtos/BikeDto";
+import { BikeHomeDTO } from "../dtos/BikeDto";
 import { Link } from "../components/Link";
 import InsurancePlans from "../components/patterns/InsurancePlans";
 
 interface PageProps {
-  bikes: BikeDTO[];
+  bikes: BikeHomeDTO[];
 }
 
 export default function HomePage({
@@ -122,12 +122,12 @@ export default function HomePage({
 
 export const getStaticProps: GetStaticProps = async () => {
 
-  let data: any = [];
+  let data: BikeHomeDTO[] = [];
 
   const q = query(collection(db, "bicicletas"), orderBy("preco", "desc"));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
-    data.push({ id: doc.id, ...doc.data() });
+    data.push({ ...doc.data() as BikeHomeDTO });
   });
 
   return {
