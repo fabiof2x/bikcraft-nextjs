@@ -1,3 +1,7 @@
+import { GetStaticProps } from 'next'
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "../services/firebase";
+
 import { Disclosure } from "@headlessui/react";
 import { DocumentTitle } from "../components/DocumentTitle"
 
@@ -9,40 +13,13 @@ import { QuestionDTO } from "../dtos/QuestionDTO";
 
 import styles from "../styles/Insurance.module.scss";
 
-export default function Insurance() {
-  //Temp Bikes Data
-  const questions: QuestionDTO[] = [
-    {
-      id: "1",
-      question: "Qual forma de pagamento vocês aceitam?",
-      answer: "Aceitamos pagamentos parcelados em todos os cartões de crédito. Para pagamentos à vista também aceitarmos PIX e Boleto através do PagSeguro.",
-    },
-    {
-      id: "2",
-      question: "Como posso entrar em contato?",
-      answer: "Através de nosso formulário de contato ou dos telefones que informamos na nossa página de contato.",
-    },
-    {
-      id: "3",
-      question: "Vocês possuem algum desconto?",
-      answer: "Todos os nossos produtos possuem desconto de 10% em pagamentos via PIX ou à vista no Cartão de Crédito.",
-    },
-    {
-      id: "4",
-      question: "Qual a garantia que possuo?",
-      answer: "Garantia de 1 ano em qualquer componente elétrico e de 2 anos nos acessórios.",
-    },
-    {
-      id: "5",
-      question: "Posso parcelar no boleto?",
-      answer: "Você pode parcelar em até 12x sem juros.",
-    },
-    {
-      id: "6",
-      question: "Quantas trocas posso fazer ao ano?",
-      answer: "Você pode fazer até 2 (duas) trocas no plano PRATA e até 5 (cinco) trocas no plano OURO.",
-    },
-  ];
+interface PageProps {
+  faq: QuestionDTO[];
+}
+
+export default function Insurance({
+  faq
+}: PageProps) {
   return (
     <>
       <DocumentTitle
@@ -102,7 +79,7 @@ export default function Insurance() {
         <h2>perguntas frequentes<span>.</span></h2>
 
         <dl>
-          {questions.map(question => (
+          {faq.map(question => (
             <Disclosure key={question.id}>
               {({ open }) => (
                 <div>
@@ -125,4 +102,22 @@ export default function Insurance() {
       <Footer />
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+
+  let data: QuestionDTO[] = [];
+
+  const q = query(collection(db, "faq"), orderBy("id"));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    data.push({ ...doc.data() as QuestionDTO });
+  });
+
+  return {
+    props: {
+      faq: data
+    },
+    revalidate: 60 * 60 * 24, // 24 hours
+  }
 }

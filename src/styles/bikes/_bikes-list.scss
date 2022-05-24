@@ -37,14 +37,6 @@
     &:hover h3::before {
       width: 24px;
     }
-
-    @media (max-width: 800px) {
-      padding-bottom: 60px;
-
-      ul {
-        gap: 20px;
-      }
-    }
   }
 
   img {
@@ -65,6 +57,14 @@
       margin-right: 8px;
       background-color: $color-p1;
       transition: width 0.2s;
+    }
+  }
+
+  @media (max-width: 800px) {
+    padding-bottom: 60px;
+
+    ul {
+      gap: 20px;
     }
   }
 }
