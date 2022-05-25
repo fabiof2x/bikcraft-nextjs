@@ -1,7 +1,7 @@
 import { DocumentTitle } from "../components/DocumentTitle"
-
-import Footer from "../components/patterns/Footer"
 import Header from "../components/patterns/Header"
+import HeaderTitle from "../components/patterns/HeaderTitle";
+import Footer from "../components/patterns/Footer"
 
 import styles from "../styles/{{pascalCase name}}.module.scss";
 
@@ -14,7 +14,14 @@ export default function {{pascalCase name}}() {
       />
       <Header />
 
-      <div className={styles.Container}>Page Content</div>
+      <main>
+        <HeaderTitle
+          subtitle=""
+          title=""
+        />
+
+      <div className={styles.Container}>Page {{pascalCase name}} Content</div>
+      </main>
 
       <Footer />
     </>

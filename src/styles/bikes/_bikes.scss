@@ -1,0 +1,130 @@
+@import "../variables-and-mixins";
+
+.bikesBg {
+  &:nth-child(odd) {
+    background: linear-gradient(to right, $color-0 30%, $color-11 0%);
+
+    h2 {
+      color: $color-0;
+    }
+    p {
+      color: $color-5;
+    }
+    ul {
+      color: $color-5;
+    }
+
+    @media (max-width: 800px) {
+      background: $color-11;
+    }
+  }
+}
+
+.bikesContainer {
+  @include container;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: url("../../../public/img/dec/top-right.svg") no-repeat top 40px right 20px;
+
+  h2,
+  p {
+    grid-column: 1/-1;
+  }
+
+  h2 {
+    @include font-1-xl;
+
+    margin-bottom: 20px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 8px;
+      background-color: $color-p1;
+      margin-bottom: 8px;
+    }
+  }
+
+  p {
+    @include font-2-s;
+    color: $color-8;
+
+    margin-bottom: 32px;
+  }
+
+  a {
+    place-self: end;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  ul {
+    @include font-1-m;
+    color: $color-8;
+
+    display: grid;
+    gap: 16px;
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: 600px) {
+    ul {
+      font-size: 1rem;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 32px;
+    }
+    a {
+      place-self: start;
+    }
+  }
+}
+
+.bikesImage {
+  display: grid;
+
+  img {
+    grid-area: 1/1;
+  }
+
+  span {
+    @include font-2-m;
+    color: $color-0;
+
+    grid-area: 1/1;
+    place-self: start end;
+    margin-top: 20px;
+    background: $color-12;
+    display: inline-block;
+    padding: 8px 16px 8px 8px;
+    border-radius: 4px 0 0 4px;
+  }
+}
+
+.bikesContent {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: start;
+
+  img {
+    width: 24px;
+    margin-right: 8px;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
