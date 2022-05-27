@@ -48,7 +48,7 @@ export default function Bikes() {
                   Rastreador
                 </li>
               </ul>
-              <Button href="./bicicletas/nimbus.html">Mais Sobre</Button>
+              <Button arrow href="./bicicletas/nimbus.html">Mais Sobre</Button>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function Bikes() {
                   Rastreador
                 </li>
               </ul>
-              <Button href="./bicicletas/nimbus.html">Mais Sobre</Button>
+              <Button arrow href="./bicicletas/nimbus.html">Mais Sobre</Button>
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function Bikes() {
                   Rastreador
                 </li>
               </ul>
-              <Button href="./bicicletas/nimbus.html">Mais Sobre</Button>
+              <Button arrow href="./bicicletas/nimbus.html">Mais Sobre</Button>
             </div>
           </div>
         </div>

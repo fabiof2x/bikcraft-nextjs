@@ -31,3 +31,22 @@
     background: $color-9;
   }
 }
+
+.buttonArrow {
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 10px;
+    margin-left: 12px;
+    background: url("../../../public/img/icones/seta.svg");
+    transition: transform 0.2s;
+  }
+
+  &:hover::after {
+    transform: translateX(4px);
+  }
+}

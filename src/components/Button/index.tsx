@@ -7,12 +7,14 @@ interface Props {
   children: ReactNode,
   href: string,
   secondary?: boolean,
+  arrow?: boolean,
 }
 
 export default function Button({
   children,
   href,
-  secondary
+  secondary,
+  arrow,
 }: Props) {
   return (
     <Link
@@ -20,6 +22,7 @@ export default function Button({
       className={`
         ${styles.buttonContainer} 
         ${secondary && styles.buttonSecondary}
+        ${arrow && styles.buttonArrow}
     `} >
       {children}
     </Link>
