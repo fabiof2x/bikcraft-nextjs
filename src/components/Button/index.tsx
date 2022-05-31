@@ -5,14 +5,14 @@ import styles from "./Button.module.scss";
 
 interface Props {
   children: ReactNode,
-  href: string,
+  href?: string,
   secondary?: boolean,
   arrow?: boolean,
 }
 
 export default function Button({
   children,
-  href,
+  href = "#",
   secondary,
   arrow,
 }: Props) {
