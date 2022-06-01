@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "deploy": "firebase deploy --only functions,hosting",
     "start": "next start",
     "generate": "yarn plop --plopfile ./generators/plopfile.js"
