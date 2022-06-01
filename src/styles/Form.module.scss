@@ -17,6 +17,7 @@
 }
 
 .form input[type="text"],
+.form input[type="number"],
 .form input[type="email"],
 .form textarea {
   font: 400 1rem/1.5 "Roboto", sans-serif;
@@ -29,12 +30,25 @@
 }
 
 .form input[type="text"]:focus,
+.form input[type="number"]:focus,
 .form input[type="email"]:focus,
 .form textarea:focus {
   outline: none;
   border-color: $color-p1;
   background: $color-0;
   box-shadow: 0 0 0 2px #fea;
+}
+
+.form input[type="number"]::-webkit-inner-spin-button,
+.form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form .error {
+  margin-top: 4px;
+  color: #ff0000;
+  @include font-1-xs;
 }
 
 @media (max-width: 600px) {

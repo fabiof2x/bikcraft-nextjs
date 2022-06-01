@@ -110,3 +110,9 @@
     margin-bottom: 12px;
   }
 }
+
+.formPhone {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 8px;
+}

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Link } from "../Link";
 
-import styles from "./Button.module.scss";
+import styles from "../../styles/components/Button.module.scss";
 
 interface Props {
   children: ReactNode,
