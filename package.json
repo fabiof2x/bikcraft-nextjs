@@ -6,9 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "deploy": "firebase deploy --only functions,hosting",
     "start": "next start",
-    "generate": "yarn plop --plopfile ./generators/plopfile.js"
+    "generate": "npx plop --plopfile ./generators/plopfile.js"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.2",

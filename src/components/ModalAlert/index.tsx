@@ -19,7 +19,7 @@ export default function ModalAlert({ isOpen, onRequestClose, modalText }: Props)
       overlayClassName={styles.reactModalOverlay}
       className={styles.reactModalContent}
     >
-      <p>{modalText}</p>
+      <p className={styles.reactModalText}>{modalText}</p>
       <button onClick={onRequestClose} className={button.buttonContainer} type='submit'>Fechar</button>
     </Modal>
   );

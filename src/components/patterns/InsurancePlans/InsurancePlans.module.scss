@@ -16,6 +16,10 @@
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
+
+    div:nth-of-type(1) {
+      order: 2;
+    }
   }
 }
 
