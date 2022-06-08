@@ -6,7 +6,7 @@ export default function Header() {
     <header className={styles.headerBg}>
       <div className={styles.headerContainer}>
         <Link href="/">
-          <img src="./img/bikcraft.svg" width="136" height="32" alt="Bikcraft" />
+          <img src="/img/bikcraft.svg" width="136" height="32" alt="Bikcraft" />
         </Link>
 
         <nav aria-label="primaria">

@@ -1,0 +1,140 @@
+@import "../variables-and-mixins";
+
+.bikeBg {
+  background: $color-11;
+}
+
+.bikeContainer {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+// #bicicleta .titulo p {
+//   text-transform: uppercase;
+// }
+
+.bikeImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  img {
+    flex: 1;
+    min-width: 200px;
+
+    &:first-child {
+      min-width: 100%;
+    }
+  }
+
+  @media (max-width: 800px) {
+    grid-row: 2;
+  }
+}
+
+.bikeContent > p {
+  @include font-2-l;
+  color: $color-5;
+  margin-bottom: 32px;
+}
+
+.bikeBuy {
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  justify-items: start;
+  gap: 8px 12px;
+  margin-bottom: 40px;
+
+  a {
+    grid-row: span 2;
+  }
+
+  span {
+    @include font-1-xs;
+    color: $color-6;
+    display: flex;
+    align-items: center;
+    background-color: $color-12;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bikeContent h2 {
+  @include font-1-xs;
+  color: $color-0;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  margin-bottom: 12px;
+}
+
+.bikeInfo,
+.bikeDataSheet {
+  padding: 32px;
+  background-color: $color-12;
+  border-radius: 4px;
+}
+
+.bikeInfo {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+
+  img {
+    width: 24px;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    @include font-1-m;
+    color: $color-0;
+    margin-bottom: 8px;
+  }
+
+  p {
+    @include font-2-xs;
+    color: $color-5;
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bikeDataSheet {
+  @include font-2-s;
+  color: $color-4;
+
+  li {
+    padding: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-11;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  span {
+    color: $color-6;
+  }
+}

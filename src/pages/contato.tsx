@@ -109,13 +109,13 @@ export default function Contact() {
               </address>
               <div className={styles.contactSocial}>
                 <a href="./">
-                  <img src="./img/redes/instagram-p.svg" width="32" height="32" alt="Instagram" />
+                  <img src="/img/redes/instagram-p.svg" width="32" height="32" alt="Instagram" />
                 </a>
                 <a href="./">
-                  <img src="./img/redes/facebook-p.svg" width="32" height="32" alt="Facebook" />
+                  <img src="/img/redes/facebook-p.svg" width="32" height="32" alt="Facebook" />
                 </a>
                 <a href="./">
-                  <img src="./img/redes/youtube-p.svg" width="32" height="32" alt="Youtube" />
+                  <img src="/img/redes/youtube-p.svg" width="32" height="32" alt="Youtube" />
                 </a>
               </div>
             </section>
@@ -198,7 +198,7 @@ export default function Contact() {
           <h2>lojas locais<span>.</span></h2>
 
           <div className={styles.storesItem}>
-            <img src="./img/lojas/df.jpg" width="560" height="260" alt="mapa marcando o endereço em Aquela Rua, 42 - Guará II - Brasília - DF" />
+            <img src="/img/lojas/df.jpg" width="560" height="260" alt="mapa marcando o endereço em Aquela Rua, 42 - Guará II - Brasília - DF" />
             <div className={styles.storesContent}>
               <h3>Brasília</h3>
               <div className={styles.storesData}>
@@ -209,12 +209,12 @@ export default function Contact() {
                 <a href="mailto:df@bikcraft.com">df@bikcraft.com</a>
                 <a href="tel:+556199999999">+55 61 9999-9999</a>
               </div>
-              <p className={styles.storesTime}><img src="./img/icones/horario.svg" width="20" height="20" alt="" />08-18h de seg à dom</p>
+              <p className={styles.storesTime}><img src="/img/icones/horario.svg" width="20" height="20" alt="" />08-18h de seg à dom</p>
             </div>
           </div>
 
           <div className={styles.storesItem}>
-            <img src="./img/lojas/rj.jpg" width="560" height="260" alt="mapa marcando o endereço em Rua Ali Perto, 25 - Rio de Janeiro - RJ" />
+            <img src="/img/lojas/rj.jpg" width="560" height="260" alt="mapa marcando o endereço em Rua Ali Perto, 25 - Rio de Janeiro - RJ" />
             <div className={styles.storesContent}>
               <h3>Rio de Janeiro</h3>
               <div className={styles.storesData}>
@@ -225,7 +225,7 @@ export default function Contact() {
                 <a href="mailto:rj@bikcraft.com">rj@bikcraft.com</a>
                 <a href="tel:+552199999999">+55 21 9999-9999</a>
               </div>
-              <p className={styles.storesTime}><img src="./img/icones/horario.svg" width="20" height="20" alt="" />08-18h de seg à dom</p>
+              <p className={styles.storesTime}><img src="/img/icones/horario.svg" width="20" height="20" alt="" />08-18h de seg à dom</p>
             </div>
           </div>
         </div>

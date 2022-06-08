@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className={styles.footerBg}>
       <div className={styles.footerContainer}>
-        <img src="./img/bikcraft.svg" width="136" height="32" alt="Bikcraft" />
+        <img src="/img/bikcraft.svg" width="136" height="32" alt="Bikcraft" />
         <div className={styles.footerContact}>
           <h3>Contato</h3>
           <ul>
@@ -16,13 +16,13 @@ export default function Footer() {
           </ul>
           <div className={styles.footerSocialNetworks}>
             <a href="https://www.instagram.com/fabiof2x/" target="_blank">
-              <img src="./img/redes/instagram.svg" width="32" height="32" alt="Instagram" />
+              <img src="/img/redes/instagram.svg" width="32" height="32" alt="Instagram" />
             </a>
             <a href="https://facebook.com/fabiof2x/" target="_blank">
-              <img src="./img/redes/facebook.svg" width="32" height="32" alt="Facebook" />
+              <img src="/img/redes/facebook.svg" width="32" height="32" alt="Facebook" />
             </a>
             <a href="#">
-              <img src="./img/redes/youtube.svg" width="32" height="32" alt="Youtube" />
+              <img src="/img/redes/youtube.svg" width="32" height="32" alt="Youtube" />
             </a>
           </div>
         </div>
