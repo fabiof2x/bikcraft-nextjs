@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { KeyboardEvent, useState } from 'react';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -68,8 +68,8 @@ export default function Contact() {
       });
   }
 
-  function onlyNumbers(event: FormEvent) {
-    if (!/[0-9]/.test((event as any).key)) {
+  function onlyNumbers(event: KeyboardEvent) {
+    if (!/[0-9]/.test(event.key)) {
       event.preventDefault();
     }
   }
