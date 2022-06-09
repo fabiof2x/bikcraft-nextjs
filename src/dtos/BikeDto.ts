@@ -1,4 +1,4 @@
-export interface BikeDTO {
+interface BikeDTO {
   id: string;
   nome: string;
   preco: string;
@@ -19,4 +19,25 @@ export interface BikeListDTO extends BikeDTO {
     outros: string,
     velocidade: number,
   },
+}
+
+export interface BikeDetailsDTO extends BikeListDTO {
+  caracteristicas: {
+    material: string,
+    materialDescricao: string,
+    motor: string,
+    motorDescricao: string,
+    outros: string,
+    outrosDescricao: string,
+    velocidade: number,
+    velocidadeDescricao: string,
+  },
+  fichaTecnica: {
+    altura: number,
+    largura: number,
+    marchas: number,
+    peso: number,
+    profundidade: number,
+    roda: number,
+  }
 }

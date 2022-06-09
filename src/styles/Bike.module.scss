@@ -1,1 +1,9 @@
+@import "variables-and-mixins";
+
 @import "./bike/bike";
+@import "./bikes/bikes-list";
+@import "./bike/insurance";
+
+.bikesList {
+  @include container;
+}
