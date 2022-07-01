@@ -12,6 +12,7 @@ import Button from "../components/Button";
 import { BikeHomeDTO } from "../dtos/BikeDto";
 import { Link } from "../components/Link";
 import InsurancePlans from "../components/patterns/InsurancePlans";
+import { getAllBikes } from '../../lib/db';
 
 interface PageProps {
   bikes: BikeHomeDTO[];
@@ -121,13 +122,19 @@ export default function HomePage({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const bikes = await getAllBikes();
 
   let data: BikeHomeDTO[] = [];
 
-  const q = query(collection(db, "bicicletas"), orderBy("preco", "desc"));
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    data.push({ ...doc.data() as BikeHomeDTO });
+  bikes.forEach((bike) => {
+    data.push({
+      id: bike.id,
+      nome: bike.nome,
+      slug: bike.slug,
+      fotoHome: bike.fotoHome,
+      preco: bike.preco,
+      alt: bike.alt,
+    });
   });
 
   return {

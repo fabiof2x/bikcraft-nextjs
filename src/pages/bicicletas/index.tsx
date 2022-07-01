@@ -12,6 +12,7 @@ import styles from "../../styles/Bikes.module.scss";
 import Button from "../../components/Button";
 
 import { BikeListDTO } from "../../dtos/BikeDto";
+import { getAllBikes } from '../../../lib/db';
 
 interface PageProps {
   bikes: BikeListDTO[];
@@ -74,13 +75,25 @@ export default function Bikes({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-
+  const bikes = await getAllBikes();
   let data: BikeListDTO[] = [];
 
-  const q = query(collection(db, "bicicletas"), orderBy("preco", "desc"));
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    data.push({ ...doc.data() as BikeListDTO });
+  bikes.forEach(bike => {
+    data.push({
+      id: bike.id,
+      nome: bike.nome,
+      descricao: bike.descricao,
+      preco: bike.preco,
+      foto: bike.foto,
+      alt: bike.alt,
+      slug: bike.slug,
+      caracteristicas: {
+        motor: bike.motor,
+        material: bike.material,
+        velocidade: bike.velocidade,
+        outros: bike.outros
+      }
+    });
   });
 
   return {

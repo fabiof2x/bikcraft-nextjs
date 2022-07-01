@@ -103,6 +103,10 @@
     margin-bottom: 8px;
   }
 
+  svg {
+    color: $color-0;
+  }
+
   h3 {
     @include font-1-m;
     color: $color-0;

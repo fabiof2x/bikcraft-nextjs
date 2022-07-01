@@ -17,7 +17,7 @@ export interface BikeListDTO extends BikeDTO {
     material: string,
     motor: string,
     outros: string,
-    velocidade: number,
+    velocidade: string,
   },
 }
 
@@ -29,15 +29,15 @@ export interface BikeDetailsDTO extends BikeListDTO {
     motorDescricao: string,
     outros: string,
     outrosDescricao: string,
-    velocidade: number,
+    velocidade: string,
     velocidadeDescricao: string,
   },
   fichaTecnica: {
-    altura: number,
-    largura: number,
-    marchas: number,
-    peso: number,
-    profundidade: number,
-    roda: number,
+    altura: string,
+    largura: string,
+    marchas: string,
+    peso: string,
+    profundidade: string,
+    roda: string,
   }
 }

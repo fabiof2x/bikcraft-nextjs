@@ -13,6 +13,7 @@ import styles from "../../styles/Bike.module.scss";
 import Button from "../../components/Button";
 import { Link } from "../../components/Link";
 import { BikeDetailsDTO } from '../../dtos/BikeDto';
+import { getAllBikes } from '../../../lib/db';
 
 interface IParams extends ParsedUrlQuery {
   slug: string
@@ -133,13 +134,38 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as IParams;
+  const bikes = await getAllBikes();
 
   let data: BikeDetailsDTO[] = [];
 
-  const q = query(collection(db, "bicicletas"), orderBy("preco", "desc"));
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    data.push({ ...doc.data() as BikeDetailsDTO });
+  bikes.forEach(bike => {
+    data.push({
+      id: bike.id,
+      nome: bike.nome,
+      descricao: bike.descricao,
+      preco: bike.preco,
+      foto: bike.foto,
+      alt: bike.alt,
+      slug: bike.slug,
+      caracteristicas: {
+        motor: bike.motor,
+        motorDescricao: bike.motor_descricao,
+        material: bike.material,
+        materialDescricao: bike.material_descricao,
+        velocidade: bike.velocidade,
+        velocidadeDescricao: bike.velocidade_descricao,
+        outros: bike.outros,
+        outrosDescricao: bike.outros_descricao,
+      },
+      fichaTecnica: {
+        peso: bike.peso,
+        altura: bike.altura,
+        largura: bike.largura,
+        profundidade: bike.profundidade,
+        marchas: bike.marchas,
+        roda: bike.roda,
+      }
+    });
   });
 
   const response: BikeDetailsDTO[] = data.filter((item: BikeDetailsDTO) => item.slug === slug);

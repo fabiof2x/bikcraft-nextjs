@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model bicicletas {
+  id                   String @id @default(uuid())
+  nome                 String @db.Text()
+  preco                String @db.Text()
+  descricao            String @db.Text()
+  foto                 String @db.Text()
+  fotoHome             String @db.Text()
+  alt                  String @db.Text()
+  slug                 String @db.Text()
+  material             String @db.Text()
+  material_descricao   String @db.Text()
+  motor                String @db.Text()
+  motor_descricao      String @db.Text()
+  velocidade           String @db.Text()
+  velocidade_descricao String @db.Text()
+  outros               String @db.Text()
+  outros_descricao     String @db.Text()
+  altura               String @db.Text()
+  largura              String @db.Text()
+  marchas              String @db.Text()
+  peso                 String @db.Text()
+  profundidade         String @db.Text()
+  roda                 String @db.Text()
+}
