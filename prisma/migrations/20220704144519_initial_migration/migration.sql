@@ -2,7 +2,7 @@
 CREATE TABLE `bicicletas` (
     `id` VARCHAR(191) NOT NULL,
     `nome` TEXT NOT NULL,
-    `preco` TEXT NOT NULL,
+    `preco` FLOAT NOT NULL,
     `descricao` TEXT NOT NULL,
     `foto` TEXT NOT NULL,
     `fotoHome` TEXT NOT NULL,
@@ -16,12 +16,12 @@ CREATE TABLE `bicicletas` (
     `velocidade_descricao` TEXT NOT NULL,
     `outros` TEXT NOT NULL,
     `outros_descricao` TEXT NOT NULL,
-    `altura` TEXT NOT NULL,
-    `largura` TEXT NOT NULL,
-    `marchas` TEXT NOT NULL,
-    `peso` TEXT NOT NULL,
-    `profundidade` TEXT NOT NULL,
-    `roda` TEXT NOT NULL,
+    `altura` INTEGER NOT NULL,
+    `largura` INTEGER NOT NULL,
+    `marchas` INTEGER NOT NULL,
+    `peso` INTEGER NOT NULL,
+    `profundidade` INTEGER NOT NULL,
+    `roda` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

@@ -1,7 +1,7 @@
 interface BikeDTO {
   id: string;
   nome: string;
-  preco: string;
+  preco: number;
   slug: string;
   alt: string;
 }
@@ -33,11 +33,11 @@ export interface BikeDetailsDTO extends BikeListDTO {
     velocidadeDescricao: string,
   },
   fichaTecnica: {
-    altura: string,
-    largura: string,
-    marchas: string,
-    peso: string,
-    profundidade: string,
-    roda: string,
+    altura: number,
+    largura: number,
+    marchas: number,
+    peso: number,
+    profundidade: number,
+    roda: number,
   }
 }

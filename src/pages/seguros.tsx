@@ -12,6 +12,7 @@ import InsurancePlans from "../components/patterns/InsurancePlans";
 import { QuestionDTO } from "../dtos/QuestionDTO";
 
 import styles from "../styles/Insurance.module.scss";
+import { getFaq } from '../../lib/db';
 
 interface PageProps {
   faq: QuestionDTO[];
@@ -105,14 +106,13 @@ export default function Insurance({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const faq = await getFaq();
 
   let data: QuestionDTO[] = [];
 
-  const q = query(collection(db, "faq"), orderBy("id"));
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    data.push({ ...doc.data() as QuestionDTO });
-  });
+  faq.forEach(question => {
+    data.push({ ...question as QuestionDTO });
+  })
 
   return {
     props: {
