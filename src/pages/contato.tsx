@@ -40,6 +40,7 @@ const contactFormSchema = yup.object().shape({
 export default function Contact() {
   const [modalAlertIsOpen, setModalAlertIsOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>({
     resolver: yupResolver(contactFormSchema)
@@ -54,16 +55,19 @@ export default function Contact() {
   }
 
   async function sendContactData({ areaCode, email, message, name, phone }: Inputs) {
-    api.post('/contact', {
+    setIsLoading(true);
+    await api.post('/contact', {
       areaCode, email, message, name, phone
     })
       .then(function (response) {
         setModalMessage('Mensagem enviada com sucesso!');
+        setIsLoading(false);
         toggleOpenCloseModal();
         reset();
       })
       .catch(function (error) {
         setModalMessage('Erro ao enviar a mensagem! Tente novamente');
+        setIsLoading(false);
         toggleOpenCloseModal();
       });
   }
@@ -186,7 +190,11 @@ export default function Contact() {
                   />
                   <span className={form.error}>{errors.message?.message}</span>
                 </div>
-                <button className={button.buttonContainer} type='submit'>Enviar Mensagem</button>
+                <button
+                  className={button.buttonContainer}
+                  type='submit'
+                  disabled={isLoading}
+                >Enviar Mensagem</button>
               </form>
             </section>
           </div>
